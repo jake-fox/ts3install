@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/home
+cd /home
 useradd --disabled-login teamspeak
 wget https://files.teamspeak-services.com/releases/server/3.6.0/teamspeak3-server_linux_amd64-3.6.0.tar.bz2
 tar xvf 3.6.0.tar.bz2
