@@ -90,12 +90,16 @@ if [ "$old_version" != "$version" ]; then
 		exit 1
 	fi
 
-	if [ "1" = "1" ]; then
+	if [ ! -e '.ts3server_license_accepted' ]; then
 			tar --to-stdout -xf "$tmpfile" "$tsdir"LICENSE
+			echo -n "Accept license agreement (y/N)? "
+			read answer
+			if ! echo "$answer" | grep -iq "^y" ; then
 				rm "$tmpfile"
 				exit 1
 			fi
 		fi
+		
 		if [ -e 'ts3server_startscript.sh' ]; then
         		./ts3server_startscript.sh stop
 		else
