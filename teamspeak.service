@@ -1,5 +1,3 @@
-#!/bin/bash
-
 [Unit]
 Description=TeamSpeak 3 Server
 After=network.target
