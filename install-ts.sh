@@ -16,6 +16,6 @@ iptables -A INPUT -p tcp --dport 30033 -j ACCEPT
 iptables -A INPUT -p tcp --sport 30033 -j ACCEPT
 iptables -A INPUT -p tcp --dport 10011 -j ACCEPT
 iptables -A INPUT -p tcp --sport 10011 -j ACCEPT
-wget -O /home/teamspeak/start-ts.sh https://lochstudioscdn.nyc3.cdn.digitaloceanspaces.com/scripts/static/teamspeak/start-ts.sh
+wget -O /home/teamspeak/start-ts.sh https://raw.githubusercontent.com/jake-fox/ts3install/master/start-ts.sh
 cd /home/teamspeak
 ./start-ts.sh
