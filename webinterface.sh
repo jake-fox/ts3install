@@ -1,3 +1,5 @@
+#!/bin/sh
+
 apt update
 apt upgrade -y
 apt install ca-certificates apt-transport-https lsb-release curl nano unzip -y 
