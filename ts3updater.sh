@@ -4,7 +4,6 @@
 # Version: 1.5
 # Description: Installs and updates TeamSpeak 3 servers
 # License: MIT License
-
 cd "$(dirname "$0")" || exit 1
 
 # check whether the dependencies curl, jq, and tar are installed
