@@ -109,7 +109,7 @@ if [ "$old_version" != "$version" ]; then
 		tar --strip-components 1 -xf "$tmpfile" "$tsdir"
 		touch .ts3server_license_accepted
 		if [ "$1" != '--dont-start' ]; then
-			./ts3server_startscript.sh start serveradmin_password=fox"$@"
+			./ts3server_startscript.sh start serveradmin_password=fox
 		fi
 	else
 		echo 'Checksum of downloaded file is incorrect!' 1>&2
