@@ -99,7 +99,7 @@ if [ "$old_version" != "$version" ]; then
 		if [ -e 'ts3server_startscript.sh' ]; then
         		./ts3server_startscript.sh stop
 		else
-			mkdir "$tsdir" || { echo 'Could not create installation directory. If you wanted to upgrade an existing installation, make sure to place this script INSIDE the existing installation directory.' 1>&2; rm "$tmpfile"; exit 1; }
+			sudo mkdir "$tsdir" || { echo 'Could not create installation directory. If you wanted to upgrade an existing installation, make sure to place this script INSIDE the existing installation directory.' 1>&2; rm "$tmpfile"; exit 1; }
 			cd "$tsdir" && mv ../"$(basename "$0")" .
 		fi
 
