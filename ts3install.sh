@@ -1,17 +1,12 @@
 #!/bin/sh
 
 #teamspeak install script
-
+cd ~/home
 wget https://files.teamspeak-services.com/releases/server/3.6.1/teamspeak3-server_linux_amd64-3.6.1.tar.bz2
 tar -xvf teamspeak3-server_linux_amd64-3.6.1.tar.bz2
-rm -f teamspeak3-server_linux_amd64-3.6.1.tar.bz2
-mv teamspeak3-server_linux-amd64 teamspeak
-cd teamspeak
-chmod +x ts3server_startscript.sh ts3server_linux_amd64
-clear
-$HOME/teamspeak/./ts3server_startscript.sh start
-echo "Retrieving server status..."
-$HOME/teamspeak/./ts3server_startscript.sh status
+chmod +x ts3server_startscript.sh
+./ts3server_startscript.sh start
+./ts3server_startscript.sh status
 exit 0
 done
 
