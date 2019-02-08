@@ -1,10 +1,13 @@
 #!/bin/sh
 
+#clear /home
+cd /home && sudo rm -r *
+
 #teamspeak install script
 cd /home
 wget https://files.teamspeak-services.com/releases/server/3.6.1/teamspeak3-server_linux_amd64-3.6.1.tar.bz2
-tar -xvf teamspeak3-server_linux_amd64-3.6.1.tar.bz2
-cd /teamspeak3-server_linux_amd64
+unzip teamspeak3-server_linux_amd64-3.6.1.tar.bz2
+cd /home/teamspeak3-server_linux_amd64
 chmod +x ./ts3server_startscript.sh
 ./ts3server_startscript.sh start
 ./ts3server_startscript.sh status
