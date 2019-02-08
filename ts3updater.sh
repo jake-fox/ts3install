@@ -1,11 +1,4 @@
 #!/bin/sh
-# Script Name: ts3updater.sh
-# Author: eminga
-# Version: 1.5
-# Description: Installs and updates TeamSpeak 3 servers
-# License: MIT License
-
-apt install tar
 
 cd "$(dirname "$0")" || exit 1
 
@@ -92,7 +85,9 @@ if [ "$old_version" != "$version" ]; then
 		exit 1
 	fi
 
-	if [ ! -e '.ts3server_license_accepted' ]; then
+	if [ "$checksum" = "$sha256" ]; then
+		tsdir=$(tar -tf "$tmpfile" | grep -m1 /)
+		if [ ! -e '.ts3server_license_accepted' ]; then
 			tar --to-stdout -xf "$tmpfile" "$tsdir"LICENSE
 			echo -n "Accept license agreement (y/N)? "
 			read answer
@@ -101,18 +96,17 @@ if [ "$old_version" != "$version" ]; then
 				exit 1
 			fi
 		fi
-		
 		if [ -e 'ts3server_startscript.sh' ]; then
         		./ts3server_startscript.sh stop
 		else
-			sudo mkdir "$tsdir" || { echo 'Could not create installation directory. If you wanted to upgrade an existing installation, make sure to place this script INSIDE the existing installation directory.' 1>&2; rm "$tmpfile"; exit 1; }
+			mkdir "$tsdir" || { echo 'Could not create installation directory. If you wanted to upgrade an existing installation, make sure to place this script INSIDE the existing installation directory.' 1>&2; rm "$tmpfile"; exit 1; }
 			cd "$tsdir" && mv ../"$(basename "$0")" .
 		fi
 
 		tar --strip-components 1 -xf "$tmpfile" "$tsdir"
 		touch .ts3server_license_accepted
 		if [ "$1" != '--dont-start' ]; then
-			./ts3server_startscript.sh start serveradmin_password=fox
+			./ts3server_startscript.sh start "$@"
 		fi
 	else
 		echo 'Checksum of downloaded file is incorrect!' 1>&2
