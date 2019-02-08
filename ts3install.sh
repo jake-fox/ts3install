@@ -93,6 +93,7 @@ if [ "$old_version" != "$version" ]; then
 			tar --to-stdout -xf "$tmpfile" "$tsdir"LICENSE
 			echo -n "Accept license agreement (y/N)? "
 			read answer
+			echo y
 			if ! echo "$answer" | grep -iq "^y" ; then
 				rm "$tmpfile"
 				exit 1
@@ -101,7 +102,7 @@ if [ "$old_version" != "$version" ]; then
 		if [ -e 'ts3server_startscript.sh' ]; then
         		./ts3server_startscript.sh stop
 		else
-			sudo mkdir -f "$tsdir" || { echo 'Could not create installation directory. If you wanted to upgrade an existing installation, make sure to place this script INSIDE the existing installation directory.' 1>&2; rm "$tmpfile"; exit 1; }
+			mkdir "$tsdir" || { echo 'Could not create installation directory. If you wanted to upgrade an existing installation, make sure to place this script INSIDE the existing installation directory.' 1>&2; rm "$tmpfile"; exit 1; }
 			cd "$tsdir" && mv ../"$(basename "$0")" .
 		fi
 
