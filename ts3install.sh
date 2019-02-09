@@ -7,7 +7,7 @@ fi
 
 #teamspeak install script
 cd /home
-wget -o https://files.teamspeak-services.com/releases/server/3.6.1/teamspeak3-server_linux_amd64-3.6.1.tar.bz2
+wget -O https://files.teamspeak-services.com/releases/server/3.6.1/teamspeak3-server_linux_amd64-3.6.1.tar.bz2
 tar -xvf teamspeak3-server_linux_amd64-3.6.1.tar.bz2
 rm -f teamspeak3-server_linux_amd64-3.6.1.tar.bz2
 cd /home/teamspeak3-server_linux_amd64
