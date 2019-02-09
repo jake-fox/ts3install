@@ -19,8 +19,11 @@ read pass
 
 
 ./ts3server_startscript.sh status
+
+sleep 10
+
 exit 0
-done
+
 
 
 #webinterface script
