@@ -1,7 +1,9 @@
 #!/bin/sh
 
-#clear /home
-
+if    [ "$EUID" -ne 0 ]; then
+    echo -e "\nERROR!!! SCRIPT MUST RUN WITH ROOT PRIVILAGES\n"
+    exit 1
+fi
 
 #teamspeak install script
 cd /home
