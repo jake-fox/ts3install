@@ -12,7 +12,9 @@ cd /home/teamspeak3-server_linux_amd64
 chmod +x ./ts3server_startscript.sh
 touch .ts3server_license_accepted
 
-./ts3server_startscript.sh start
+echo type a password for query serveradmin
+read pass
+./ts3server_startscript.sh start serveradmin_password=$pass
 
 
 
