@@ -15,16 +15,8 @@ touch .ts3server_license_accepted
 echo type a password for query serveradmin
 read pass
 ./ts3server_startscript.sh start serveradmin_password=$pass
-
-
-
 ./ts3server_startscript.sh status
-
 sleep 10
-
-exit 0
-
-
 
 #webinterface script
 
