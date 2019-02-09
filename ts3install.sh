@@ -1,5 +1,5 @@
 #!/bin/sh
-
+tput setaf 7;
 if    [ "$EUID" -ne 0 ]; then
     tput setaf 1; echo -e "\nERROR!!! SCRIPT MUST RUN WITH ROOT PRIVILAGES\n"
     exit 1
