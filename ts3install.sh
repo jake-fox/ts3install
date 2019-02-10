@@ -1,9 +1,5 @@
 #!/bin/sh
-tput setaf 7;
-if    [ "$EUID" -ne 0 ]; then
-    tput setaf 1; echo -e "\nERROR!!! SCRIPT MUST RUN WITH ROOT PRIVILAGES\n"
-    exit 1
-fi
+
 
 #teamspeak install script
 cd /home
@@ -14,9 +10,9 @@ cd /home/teamspeak3-server_linux_amd64
 chmod +x ./ts3server_startscript.sh
 touch .ts3server_license_accepted
 
-tput setaf 1;
+
 echo type a password for query serveradmin 
-tput setaf 7;
+
 read pass
 ./ts3server_startscript.sh start serveradmin_password=$pass
 
