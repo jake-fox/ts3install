@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 #teamspeak install script
