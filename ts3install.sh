@@ -12,9 +12,14 @@ touch .ts3server_license_accepted
 
 
 echo type a password for query serveradmin 
+
 read pass
+
+
 echo type a queryport for server query
+
 read query
-./ts3server_startscript.sh start query_ip=0.0.0.0 query_port=$query serveradmin_password=$pass
+
+./ts3server_startscript.sh start query_ip=127.0.0.1 query_port=$query serveradmin_password=$pass
 
 
