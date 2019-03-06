@@ -20,6 +20,6 @@ echo type a queryport for server query
 
 read query
 
-./ts3server_startscript.sh start serveradmin_password=$pass query_port=$query
+./ts3server_startscript.sh start serveradmin_password=$pass & query_port=$query
 
 
