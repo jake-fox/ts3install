@@ -23,12 +23,12 @@ read voiceport
 cat > /home/teamspeak3-server_linux_amd64/ts3server.ini <<- "EOF"
 
 machine_id= 
-default_voice_port="$voiceport" 
+default_voice_port=$voiceport"
 voice_ip=0.0.0.0 
 licensepath=/etc/teamspeak3-server/ 
 filetransfer_port=30033 
 filetransfer_ip=0.0.0.0 
-query_port="$queryport"
+query_port=$queryport
 query_ip=0.0.0.0 
 query_ip_whitelist=/var/lib/teamspeak3-server/query_ip_whitelist.txt 
 query_ip_blacklist=/var/lib/teamspeak3-server/query_ip_blacklist.txt 
