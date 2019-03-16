@@ -20,7 +20,7 @@ read query
 echo type a voiceport for the server
 read voiceport
 
-touch /home/teamspeak3-server_linux_amd64/.ts3server.ini
+touch /home/teamspeak3-server_linux_amd64/ts3server.ini
 
 echo
 "machine_id=
