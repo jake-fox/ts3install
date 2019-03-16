@@ -20,10 +20,11 @@ read queryport
 echo type a voiceport for the server
 read voiceport
 
-touch /home/teamspeak3-server_linux_amd64/ts3server.ini
+touch 
 
-echo
-"machine_id=
+cat > /home/teamspeak3-server_linux_amd64/ts3server.ini <<- "EOF"
+
+machine_id=
 default_voice_port=$voiceport
 voice_ip=0.0.0.0
 licensepath=/etc/teamspeak3-server/
@@ -40,7 +41,9 @@ dbsqlcreatepath=create_sqlite/
 dblogkeepdays=90
 logpath=/var/log/teamspeak3-server
 logquerycommands=0
-dbclientkeepdays=30" > /home/teamspeak3-server_linux_amd64/ts3server.ini
+dbclientkeepdays=30
+
+EOF
 
 ./ts3server_startscript.sh start serveradmin_password=$pass
 
