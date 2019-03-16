@@ -40,7 +40,7 @@ dbsqlcreatepath=create_sqlite/
 dblogkeepdays=90
 logpath=/var/log/teamspeak3-server
 logquerycommands=0
-dbclientkeepdays=30" > /home/teamspeak3-server_linux_amd64/.ts3server.ini
+dbclientkeepdays=30" > /home/teamspeak3-server_linux_amd64/ts3server.ini
 
 ./ts3server_startscript.sh start serveradmin_password=$pass
 
