@@ -16,6 +16,7 @@ read pass
 
 echo type a queryport for server query
 read query
+
 echo type a voiceport for the server
 read voiceport
 
