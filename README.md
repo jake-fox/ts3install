@@ -1,4 +1,4 @@
-# ts3-ts6 Ubuntu 24.04LTS auto installer
+# ts3-ts6 Server, Ubuntu 24.04LTS auto installer
 
 Paste this in your terminal
 
