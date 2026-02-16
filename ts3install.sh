@@ -37,8 +37,11 @@ sudo systemctl start ts3server
 sudo systemctl enable ts3server
 
 
-sudo journalctl -u ts3server | grep -i password
-sudo journalctl -u ts3server | grep -i token
+sudo journalctl -u ts3server --no-pager | grep -Ei 'password|token' | sed -E '
+s/.*password.*: */ServerAdmin Password: /I;
+s/.*token.*= */ServerAdmin Token: /I;
+'
+
 
 
 
