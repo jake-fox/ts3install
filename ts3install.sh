@@ -37,9 +37,13 @@ sudo systemctl start ts3server
 sudo systemctl enable ts3server
 
 
-sudo journalctl -u ts3server --no-pager | grep -Ei 'password|token' | sed \
--e 's/.*password.*/\n=== SERVER ADMIN PASSWORD ===\n&\n/' \
--e 's/.*token.*/\n=== SERVER ADMIN TOKEN ===\n&\n/'
+sudo journalctl -u ts3server --no-pager | \
+grep -i password | \
+sed 's/.*password.*/\n=== SERVER ADMIN PASSWORD ===\n&\n/'
+
+sudo journalctl -u ts3server --no-pager | \
+grep -i token | \
+sed 's/.*token.*/\n=== SERVER ADMIN TOKEN ===\n&\n/'
 
 
 
